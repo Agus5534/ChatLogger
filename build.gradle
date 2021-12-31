@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
 }
 
-group 'me.agus5534'
+group 'io.github.agus5534'
 version '1.0.0'
 
 repositories {

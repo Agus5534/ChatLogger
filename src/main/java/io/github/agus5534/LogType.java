@@ -1,3 +1,5 @@
+package io.github.agus5534;
+
 public enum LogType {
     SIMPLE("&7&o[%s: %s]"),
     WARN("&g&o[%s: %s]"),
