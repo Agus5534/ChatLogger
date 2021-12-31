@@ -1,9 +1,11 @@
 plugins {
     id 'java-library'
+    id 'maven-publish'
+    id 'signing'
 }
 
 group 'io.github.agus5534'
-version '1.0.0'
+version '1.0.1'
 
 repositories {
     mavenCentral()
@@ -19,4 +21,61 @@ repositories {
 
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
+}
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'io.github.agus5534'
+            artifactId = 'ChatLogger'
+            version = '1.0.1'
+            from components.java
+            pom {
+                name = 'ChatLogger'
+                description = 'A library that helps to log messages on chat in Minecraft Bukkit Based Servers'
+                url = 'https://github.com/Agus5534/ChatLogger'
+                inceptionYear = '2021'
+
+                licenses {
+                    license {
+                        name = 'MIT license'
+                        url = 'http://www.opensource.org/licenses/mit-license.php'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'Agus5534'
+                        name = 'Agustín Montero'
+                        email = 'agustinmonte06@gmail.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git:github.com/Agus5534/ChatLogger.git'
+                    developerConnection = 'scm:git:ssh://github.com:Agus5534/ChatLogger.git'
+                    url = 'https://github.com/Agus5534/ChatLogger'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = "OSSRH"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = project.properties["ossrhUsername"]
+                password = project.properties["ossrhPassword"]
+            }
+        }
+    }
+}
+signing {
+    sign publishing.publications.mavenJava
+}
+javadoc{
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5',true)
+    }
 }
