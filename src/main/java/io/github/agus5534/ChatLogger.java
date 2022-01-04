@@ -17,9 +17,9 @@ public class ChatLogger {
     private LogType logType;
 
     /**Create a ChatLog
-     * Must specify a <a href="#{@link}">{@link String}</a>
+     * Must specify a permission ({@link String})
      *
-     * @param permission
+     * @param permission a {@link String} that specifies the permission which receives logs
      */
     public ChatLogger(String permission) {
         this.permission = permission;
