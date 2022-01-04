@@ -1,11 +1,11 @@
 plugins {
     id 'java-library'
-    id 'maven-publish'
     id 'signing'
+    id 'maven-publish'
 }
 
 group 'io.github.agus5534'
-version '1.0.1'
+version '1.0.3'
 
 repositories {
     mavenCentral()
@@ -26,12 +26,13 @@ java {
     withJavadocJar()
     withSourcesJar()
 }
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId = 'io.github.agus5534'
             artifactId = 'ChatLogger'
-            version = '1.0.1'
+            version = '1.0.3'
             from components.java
             pom {
                 name = 'ChatLogger'

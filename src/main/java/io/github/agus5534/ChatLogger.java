@@ -58,14 +58,14 @@ public class ChatLogger {
     private void logger() {
         for(Player player : Bukkit.getOnlinePlayers()) {
             if(player.isOp()) {
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&', String.format(logType.getFormat(),author,content)));
+                player.sendMessage(String.format(logType.getFormat(),author,content));
             }
         }
     }
     private void loggerperm() {
         for(Player player : Bukkit.getOnlinePlayers()) {
             if(player.hasPermission(permission)) {
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&',String.format(logType.getFormat(),author,content)));
+                player.sendMessage(String.format(logType.getFormat(),author,content));
             }
         }
     }
