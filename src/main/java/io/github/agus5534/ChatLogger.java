@@ -4,15 +4,34 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
+/**
+ * @author Agus5534
+ * @version 1.0.4
+ * @since 1.0.0
+ * {@code ChatLogger chatLogger = new ChatLogger("permission_name");}
+ */
 public class ChatLogger {
     private String permission;
     private String author;
     private String content;
     private LogType logType;
+
+    /**Create a ChatLog
+     * Must specify a <a href="#{@link}">{@link String}</a>
+     *
+     * @param permission
+     */
     public ChatLogger(String permission) {
         this.permission = permission;
     }
-    public ChatLogger() {}
+    /**
+     * Send a basic vanilla Chat Log
+     * <p>
+     *  This method send a vanilla Chat Log
+     * @param author Logger author
+     * @param content Logger content
+     * @see LogType
+     */
     public void simple(String author, String content) {
         this.author = author;
         this.content = content;
@@ -23,6 +42,14 @@ public class ChatLogger {
             loggerperm();
         }
     }
+    /**
+     * Send a severe Chat Log
+     * <p>
+     *  This method send a Red Chat Color! In most cases is for errors
+     * @param author Logger author
+     * @param content Logger content
+     * @see LogType
+     */
     public void severe(String author, String content) {
         this.author = author;
         this.content = content;
@@ -33,6 +60,14 @@ public class ChatLogger {
             loggerperm();
         }
     }
+    /**
+     * Send a warn Chat Log
+     * <p>
+     *  This method send a Yellow Chat Color! In most cases is for warnings or small problems
+     * @param author Logger author
+     * @param content Logger content
+     * @see LogType
+     */
     public void warn(String author, String content) {
         this.author = author;
         this.content = content;
@@ -43,6 +78,14 @@ public class ChatLogger {
             loggerperm();
         }
     }
+    /**
+     * Send a success Chat Log
+     * <p>
+     *  This method send a Green Chat Color! In most cases is for success execution
+     * @param author Logger author
+     * @param content Logger content
+     * @see LogType
+     */
     public void success(String author, String content) {
         this.author = author;
         this.content = content;
