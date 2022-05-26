@@ -23,3 +23,5 @@ dependencies {
   <version>1.0.4</version>
 </dependency>
 ```
+
+For more info read the [Wiki](https://github.com/Agus5534/ChatLogger/wiki)
